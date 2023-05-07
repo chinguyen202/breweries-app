@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { APIResponse, ICompany } from '../types/APIResponseTypes';
+import { APIResponse } from '../types/APIResponseTypes';
 
 const useCompanyList = () => {
   const [companies, setCompanies] = useState<APIResponse>();
