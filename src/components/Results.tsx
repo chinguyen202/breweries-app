@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import Pagination from '@mui/material/Pagination';
 import Box from '@mui/material/Box';
 
-type Props = {
+export type Props = {
   companies: APIResponse;
 };
 
@@ -40,7 +40,7 @@ const Results = ({ companies }: Props) => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          mt: 5,
+          marginBottom: '10rem',
         }}
       >
         <Pagination count={numPages} page={page} onChange={handlePageChange} />
