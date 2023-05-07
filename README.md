@@ -16,10 +16,61 @@ Fetch, display, and search for brewery companies from the given API endpoint, us
 
 6. Deploy your application and rewrite README file
 
-## Optional
+## Technologies
 
-7. Use the queries listed in the documentation to sort and limit the returned data and build pagination feature.
+- JavaScript
+- React
+- TypeScript
 
-8. Create a contact form so that user can send question along with their contact information. 
+## Project structure
 
-9. Use Google-login option to pre-fill the contact form for user.
+```
+.
+├── README.md
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src
+│   ├── App.css
+│   ├── App.test.tsx
+│   ├── App.tsx
+│   ├── components
+│   │   ├── About.tsx
+│   │   ├── Company.tsx
+│   │   ├── Detail.tsx
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Home.tsx
+│   │   ├── Results.tsx
+│   │   ├── Search.tsx
+│   │   ├── SearchParams.tsx
+│   ├── hooks
+│   │   ├── useCompanyList.ts
+│   │   ├── useDetail.ts
+│   │   ├── useSearch.ts
+│   ├── types
+│   │   ├── APIResponseTypes.ts
+│   │   ├── types.ts
+│   ├── assets
+│   │   ├── business.jpg
+│   ├── index.css
+│   ├── index.tsx
+│   ├── react-app-env.d.ts
+│   ├── reportWebVitals.ts
+│   ├── setupTests.ts
+└── tsconfig.json
+```
+
+#### Getting started <a name="getting-started"></a>
+
+- Clone the repository from GitHub using `git clone`
+- Run `npm install` to install all dependencies
+
+### Demo
+
+Link:https://chinguyen202.github.io/breweries-app
