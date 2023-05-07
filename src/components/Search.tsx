@@ -2,28 +2,26 @@ import { useEffect, useState } from 'react';
 import Results from './Results';
 import SearchParams from './SearchParams';
 import { APIResponse, ICompany } from '../types/APIResponseTypes';
+import useSearch from '../hooks/useSearch';
 
 const Search = () => {
-  const [companies, setCompanies] = useState<APIResponse>();
   const [search, setSearch] = useState('');
-
-  useEffect(() => {
-    fetchCompaniesByName(search);
-  }, [search]);
-
-  const fetchCompaniesByName = async (search: string): Promise<void> => {
-    const res = await fetch(
-      `https://api.openbrewerydb.org/v1/breweries/search?query=${search}`
-    );
-    if (res.ok) {
-      setCompanies(await res.json());
-    }
-  };
+  const { companies, loading } = useSearch(search);
 
   return (
     <>
-      <SearchParams search={search} setSearch={setSearch} />
-      {companies ? <Results companies={companies} /> : <p>No company found</p>}
+      {!search ? (
+        <SearchParams search={search} setSearch={setSearch} />
+      ) : (
+        <>
+          <SearchParams search={search} setSearch={setSearch} />
+          {companies && companies.length > 0 ? (
+            <Results companies={companies} />
+          ) : (
+            <h3 style={{ textAlign: 'center' }}>No company found</h3>
+          )}
+        </>
+      )}
     </>
   );
 };
