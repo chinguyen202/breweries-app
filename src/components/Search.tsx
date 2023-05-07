@@ -6,12 +6,9 @@ import { APIResponse, ICompany } from '../types/APIResponseTypes';
 const Search = () => {
   const [companies, setCompanies] = useState<APIResponse>();
   const [search, setSearch] = useState('');
-  const handleSearch = () => {
-    fetchCompaniesByName(search);
-  };
 
   useEffect(() => {
-    handleSearch();
+    fetchCompaniesByName(search);
   }, [search]);
 
   const fetchCompaniesByName = async (search: string): Promise<void> => {
@@ -25,11 +22,7 @@ const Search = () => {
 
   return (
     <>
-      <SearchParams
-        search={search}
-        setSearch={setSearch}
-        onSearch={handleSearch}
-      />
+      <SearchParams search={search} setSearch={setSearch} />
       {companies ? <Results companies={companies} /> : <p>No company found</p>}
     </>
   );

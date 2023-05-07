@@ -3,7 +3,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import { SearchParamsProps } from '../types/types';
 
-const SearchParams = ({ search, setSearch, onSearch }: SearchParamsProps) => {
+const SearchParams = ({ search, setSearch }: SearchParamsProps) => {
   return (
     <div
       style={{
@@ -15,7 +15,6 @@ const SearchParams = ({ search, setSearch, onSearch }: SearchParamsProps) => {
       }}
     >
       <form
-        onSubmit={onSearch}
         style={{
           display: 'flex',
           width: '70%',
@@ -49,19 +48,6 @@ const SearchParams = ({ search, setSearch, onSearch }: SearchParamsProps) => {
             },
           }}
         />
-        <button
-          type="submit"
-          style={{
-            fontSize: '1.2rem',
-            color: 'white',
-            borderRadius: '1rem',
-            border: 'none',
-            backgroundColor: '#0081a7',
-            padding: '0.5rem 2rem',
-          }}
-        >
-          Search
-        </button>
       </form>
     </div>
   );
