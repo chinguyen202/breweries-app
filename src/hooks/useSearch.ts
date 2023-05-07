@@ -5,12 +5,10 @@ const localCache: Record<string, ICompany[]> = {};
 
 const useSearch = (search: string) => {
   const [companies, setCompanies] = useState<APIResponse>();
-  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchCompaniesByName = async (search: string) => {
       setCompanies([]);
-      setLoading(true);
       try {
         const res = await fetch(
           `https://api.openbrewerydb.org/v1/breweries/search?query=${search}`
@@ -21,7 +19,6 @@ const useSearch = (search: string) => {
       } catch (error) {
         console.error(error);
       }
-      setLoading(false);
     };
 
     if (!search) {
@@ -33,7 +30,7 @@ const useSearch = (search: string) => {
     }
   }, [search]);
 
-  return { companies, loading };
+  return { companies };
 };
 
 export default useSearch;
