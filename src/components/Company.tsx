@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import { CardMedia } from '@mui/material';
 import business from '../assets/business.jpg';
 import { CompanyProps } from '../types/types';
+import { Link } from 'react-router-dom';
 
 // Company card
 const Company = ({ company }: CompanyProps) => {
@@ -23,8 +24,8 @@ const Company = ({ company }: CompanyProps) => {
           <Typography variant="h5" component="div">
             {company.name}
           </Typography>
-          <a
-            href={`/detail/${company.id}`}
+          <Link
+            to={`/detail/${company.id}`}
             style={{ textDecoration: 'none', color: 'white' }}
           >
             <Typography
@@ -38,7 +39,7 @@ const Company = ({ company }: CompanyProps) => {
             >
               MORE...
             </Typography>
-          </a>
+          </Link>
         </div>
       </Card>
     </Box>

@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Results from './Results';
 import SearchParams from './SearchParams';
-import { APIResponse, ICompany } from '../types/APIResponseTypes';
 import useSearch from '../hooks/useSearch';
 
 const Search = () => {
   const [search, setSearch] = useState('');
-  const { companies, loading } = useSearch(search);
+  const { companies } = useSearch(search);
 
   return (
     <>
