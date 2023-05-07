@@ -3,12 +3,9 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const Header = () => {
-  const handleNavMenu = (event: React.MouseEvent<HTMLElement>) => {};
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -39,15 +36,43 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1 }}
           ></Typography>
-          <MenuItem onClick={handleNavMenu}>
-            <Typography textAlign="center">HOME</Typography>
-          </MenuItem>
-          <MenuItem onClick={handleNavMenu}>
-            <Typography textAlign="center">SEARCH</Typography>
-          </MenuItem>
-          <MenuItem onClick={handleNavMenu}>
-            <Typography textAlign="center">ABOUT</Typography>
-          </MenuItem>
+
+          <Typography
+            textAlign="center"
+            href="/"
+            component="a"
+            sx={{
+              textDecoration: 'none',
+              color: 'inherit',
+              marginRight: '2rem',
+            }}
+          >
+            HOME
+          </Typography>
+          <Typography
+            textAlign="center"
+            href="/search"
+            component="a"
+            sx={{
+              textDecoration: 'none',
+              color: 'inherit',
+              marginRight: '2rem',
+            }}
+          >
+            SEARCH
+          </Typography>
+          <Typography
+            textAlign="center"
+            href="/about"
+            component="a"
+            sx={{
+              textDecoration: 'none',
+              color: 'inherit',
+              marginRight: '2rem',
+            }}
+          >
+            ABOUT
+          </Typography>
         </Toolbar>
       </AppBar>
     </Box>
