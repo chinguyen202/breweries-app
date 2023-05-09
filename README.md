@@ -71,6 +71,3 @@ Fetch, display, and search for brewery companies from the given API endpoint, us
 - Clone the repository from GitHub using `git clone`
 - Run `npm install` to install all dependencies
 
-### Demo
-
-Link:https://chinguyen202.github.io/breweries-app
